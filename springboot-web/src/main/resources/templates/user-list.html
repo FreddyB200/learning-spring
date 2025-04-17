@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="page-title">
+            <i class="fas fa-users"></i>
+            Gestión de Usuarios
+        </h1>
+        <a th:href="@{/web/user/new}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Nuevo Usuario
+        </a>
+    </div>
+
+    <div class="user-grid">
+        <div th:each="user : ${users}" class="user-card">
+            <div class="card-header">
+                <div class="user-avatar"
+                     th:text="${user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}"></div>
+                <h2 th:text="${user.firstName + ' ' + user.lastName}"></h2>
+                <span class="role-tag"
+                      th:text="${user.role}"
+                      th:classappend="${user.role == 'ADMIN'} ? 'admin' : 'user'"></span>
+            </div>
+
+            <div class="card-body">
+                <div class="user-info">
+                    <p class="email">
+                        <i class="fas fa-envelope"></i>
+                        <span th:text="${user.email ?: 'Sin email'}"
+                              th:class="${user.email} ? '' : 'text-muted'"></span>
+                    </p>
+                </div>
+
+                <div class="card-actions">
+                    <a th:href="@{/web/user/details/{id}(id=${user.id})}" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> Detalles
+                    </a>
+                    <a th:href="@{/web/user/details/{id}edit(id=${user.id})}" class="btn btn-outline">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Usuario</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="user-card">
+        <div class="card-header">
+            <div class="user-avatar"
+                 th:text="${user.firstName.substring(0, 1) + user.lastName.substring(0, 1)}"></div>
+            <h1>Detalles del Usuario</h1>
+        </div>
+
+        <div class="card-body">
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <i class="fas fa-id-badge"></i>
+                    <strong>ID:</strong>
+                    <span th:text="${user.id}"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-user"></i>
+                    <strong>Nombre:</strong>
+                    <span th:text="${user.firstName}"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-user-tag"></i>
+                    <strong>Apellido:</strong>
+                    <span th:text="${user.lastName}"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <strong>Email:</strong>
+                    <span th:text="${user.email ?: 'Sin email'}"
+                          th:class="${user.email} ? 'text-primary' : 'text-muted'"></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-user-shield"></i>
+                    <strong>Rol:</strong>
+                    <span th:text="${user.role}"
+                          class="role-tag"
+                          th:classappend="${user.role == 'ADMIN'} ? 'admin' : 'user'"></span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a th:href="@{/web/user/list}" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i> Volver
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
