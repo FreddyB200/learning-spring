@@ -19,7 +19,8 @@ public class UserRepository {
         users.add(new User(5, "juan", "martinez", "juan@example.com", "estudiante"));
         users.add(new User(6, "maria", "martinez", "maria@example.com", "profesora"));
         users.add(new User(7, "pedro", "martinez", "pedro@example.com", "Estudiante"));
-        users.add(new User(8, "Freddy", "Bautista", "freddy@example.com", "ADMIN"));users.add(new User(1, "juan", "martinez", "juan@example.com", "estudiante"));
+        users.add(new User(8, "Freddy", "Bautista", "freddy@example.com", "ADMIN"));
+        users.add(new User(1, "juan", "martinez", "juan@example.com", "estudiante"));
         users.add(new User(9, "maria", "martinez", "maria@example.com", "profesora"));
         users.add(new User(10, "pedro", "martinez", "pedro@example.com", "Estudiante"));
         users.add(new User(11, "Freddy", "Bautista", "freddy@example.com", "ADMIN"));
@@ -40,7 +41,8 @@ public class UserRepository {
 //    public User getUserByid(int id){
 //        List<User> users = findAll();
 //        return users.stream()
-//                .filter(user -> user.getId() = id)
+//                .filter(user -> user.getId() == id) //para cada user compara su id con el id pasado en el argumento
+    // estructura de un lambda: (parametro) -> { cuerpo }
 //                .findFirst()
 //                .orElse(null);
 //    }

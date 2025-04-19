@@ -1,6 +1,5 @@
-package com.freddy.curso.springboot.webapp.springboot_web.controllers;
+package com.freddy.curso.springboot.webapp.springboot_web.controllers.web;
 
-import com.freddy.curso.springboot.webapp.springboot_web.models.User;
 import com.freddy.curso.springboot.webapp.springboot_web.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

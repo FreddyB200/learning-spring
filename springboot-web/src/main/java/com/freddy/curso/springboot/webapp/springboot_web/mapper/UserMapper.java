@@ -1,7 +1,7 @@
 package com.freddy.curso.springboot.webapp.springboot_web.mapper;
 
 import com.freddy.curso.springboot.webapp.springboot_web.models.User;
-import com.freddy.curso.springboot.webapp.springboot_web.models.dto.UserDTO;
+import com.freddy.curso.springboot.webapp.springboot_web.dto.UserDTO;
 import org.springframework.stereotype.Component;
 
 

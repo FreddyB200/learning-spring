@@ -1,4 +1,4 @@
-package com.freddy.curso.springboot.webapp.springboot_web.models.dto;
+package com.freddy.curso.springboot.webapp.springboot_web.dto;
 
 import com.freddy.curso.springboot.webapp.springboot_web.models.User;
 import lombok.AllArgsConstructor;
