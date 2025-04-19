@@ -6,6 +6,14 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Repositorio simulado para usuarios.
+ *
+ * Notas de aprendizaje:
+ * - Simula una base de datos en memoria usando una lista de usuarios.
+ * - Métodos principales: findAll() para obtener todos los usuarios, findById() para buscar por id.
+ * - En una aplicación real, aquí se conectaría a una base de datos.
+ */
 
 @Repository
 public class UserRepository {
@@ -38,14 +46,15 @@ public class UserRepository {
         return null;
     }
 
+    //ENCONTRAR UN USUARIO POR SU ID USANDO STREAM
 //    public User getUserByid(int id){
 //        List<User> users = findAll();
 //        return users.stream()
 //                .filter(user -> user.getId() == id) //para cada user compara su id con el id pasado en el argumento
-    // estructura de un lambda: (parametro) -> { cuerpo }
 //                .findFirst()
 //                .orElse(null);
-//    }
+//    } // estructura de un lambda: (parametro) -> { cuerpo }
+
 
 
 
